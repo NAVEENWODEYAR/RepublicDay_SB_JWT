@@ -17,6 +17,8 @@ public class SbJwtApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		BookEntity book = new BookEntity(1234L,"MahaBharatha","VedaVyasa","5000BC",9876.0);
+		BookEntity book1 = new BookEntity(7575L,"SriBhavadgitha","SriKrishna","5000BC",9876.0);
 				   bookRepo.save(book);
+				   bookRepo.save(book1);
 	}
 }
