@@ -16,7 +16,9 @@ public class BookEntity {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long bookId;
     private String bookName;
-    private String bookAuthor;
+
+    @ManyToOne
+    private Author bookAuthor;
     private String year;
     private double bookPrice;
 }
