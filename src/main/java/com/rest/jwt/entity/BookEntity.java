@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "Book_Table")
-public class Book {
+public class BookEntity {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private long bookId;
+    private Long bookId;
     private String bookName;
     private String bookAuthor;
     private String year;
