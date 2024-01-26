@@ -1,5 +1,9 @@
 
+server:
+  port: 7575
 spring:
+  application:
+    name: 75 Republic Day
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/republic
