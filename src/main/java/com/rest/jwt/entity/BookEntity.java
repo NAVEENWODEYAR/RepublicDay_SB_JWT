@@ -17,8 +17,9 @@ public class BookEntity {
     private Long bookId;
     private String bookName;
 
-    @ManyToOne
-    private Author bookAuthor;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "author")
+    private Author author;
     private String year;
     private double bookPrice;
 }

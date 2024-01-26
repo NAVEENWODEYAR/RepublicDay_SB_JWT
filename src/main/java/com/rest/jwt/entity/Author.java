@@ -21,6 +21,6 @@ public class Author {
     private String authorLastName;
     private int authorAge;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "author")
     private List<BookEntity> booksList;
 }
