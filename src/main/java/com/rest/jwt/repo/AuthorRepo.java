@@ -2,8 +2,9 @@ package com.rest.jwt.repo;
 
 import com.rest.jwt.entity.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
-public interface AuthorRepo extends JpaRepository<Author,Long> {
+public interface AuthorRepo extends CrudRepository<Author,Long> {
 }
