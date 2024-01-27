@@ -15,6 +15,9 @@
 	<description>Demo project for SB REST with JWT</description>
 	<properties>
 		<java.version>21</java.version>
+		<maven.encoding>UTF-8</maven.encoding>
+		<maven.source.compiler>${java.version}</maven.source.compiler>
+		<maven.target.compiler>${java.version}</maven.target.compiler>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -90,6 +93,53 @@
 				<configuration>
 
 				</configuration>
+			</plugin>
+			<plugin>
+				<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${maven.source.compiler}</source>
+					<target>${maven.target.compiler}</target>
+					<encoding>${maven.encoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+		<!-- https://mvnrepository.com/artifact/org.openapitools/openapi-generator-maven-plugin -->
+			<groupId>org.openapitools</groupId>
+			<artifactId>openapi-generator-maven-plugin</artifactId>
+			<version>7.2.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<inputSpec>${project.basedir}/src/main/resources/schema/api.yml</inputSpec>
+							<generatorName>spring</generatorName>
+							<packageName>com.rest.jwt</packageName>
+							<apiPackage>com.rest.jwt.api</apiPackage>
+							<modelPackage>com.rest.jwt.modal</modelPackage>
+							<generateSupportingFiles>true</generateSupportingFiles>
+							<generateApiDocumentation>true</generateApiDocumentation>
+							<generateModels>true</generateModels>
+							<generateApis>true</generateApis>
+							<configOptions>
+								<sourceFolder>src/gen/java/main</sourceFolder>
+								<useSpringBoot3>true</useSpringBoot3>
+								<useTags>true</useTags>
+								<useSpringController>true</useSpringController>
+								<interfaceOnly>true</interfaceOnly>
+								<dateLibrary>java8</dateLibrary>
+								<additionalModelTypeAnnotations>
+									@lombok.Setter
+									@lombok.Getter
+								</additionalModelTypeAnnotations>
+							</configOptions>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

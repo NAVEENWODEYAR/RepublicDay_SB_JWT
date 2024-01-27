@@ -1,0 +1,9 @@
+
+openapi: "3.0.2"
+info:
+  title: Api Generator
+  version: 1.0
+  description: Swagger API documentation
+servers:
+  -url: http://localhost:7575
+paths:
