@@ -1,0 +1,2 @@
+<artifactId>spring-boot-starter-data-rest</artifactId>
+Spring Data REST is part of the umbrella Spring Data project and makes it easy to build hypermedia-driven REST web services on top of Spring Data repositories.
