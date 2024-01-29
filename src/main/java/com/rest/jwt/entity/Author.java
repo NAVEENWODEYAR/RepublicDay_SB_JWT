@@ -1,6 +1,7 @@
 package com.rest.jwt.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,8 @@ public class Author {
     @NotNull(message = "FirstName should not be null")
     private String authorFirstName;
     private String authorLastName;
+
+    @NotEmpty(message = "Age can't be empty")
     private int authorAge;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "author")
