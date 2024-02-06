@@ -8,7 +8,6 @@ public class SbJwtApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SbJwtApplication.class, args);
-		System.out.println("args = " + args);
+		System.out.println(Thread.currentThread().getName());
 	}
-
 }
